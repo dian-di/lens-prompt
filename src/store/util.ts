@@ -1,16 +1,9 @@
-import type { Demo, DemoStyle } from "./types"
+import type { Prompt } from './types'
 
-export function defaultDemo(): Demo {
+export function defaultPrompt(): Prompt {
   return {
-    id: 1,
-    count: 1,
-    style: defaultStyle() ,
-  }
-}
-
-function defaultStyle(): DemoStyle {
-  return {
-    id: 1,
-    bg: ''
+    keyIntensity: 1.2,
+    keyAngle: 0.8,
+    keyColor: '#ffffff',
   }
 }

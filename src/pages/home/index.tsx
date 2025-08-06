@@ -1,15 +1,24 @@
-import { Button } from '@/components/ui/button'
-import { useDemoStore } from '@/store/demo'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import ControlsPanel from './components/ControlsPanel'
+import CopyPromptButton from './components/CopyPromptButton'
+import Viewport from './components/Viewport'
 
-export default function Home() {
-  const { demo, increment } = useDemoStore()
+export default function App() {
   return (
-    <div>
-      <img src='images/demo.jpg' alt='' className='w-12' />
-      <div>{demo.count}</div>
-      <Button onClick={increment} className='text-red-500'>
-        Click me
-      </Button>
+    <div className='flex h-screen gap-4 bg-gray-100 p-4'>
+      <div className='flex-1'>
+        <Viewport />
+      </div>
+
+      <Card className='w-80'>
+        <CardHeader>
+          <CardTitle>Controls</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ControlsPanel />
+          <CopyPromptButton />
+        </CardContent>
+      </Card>
     </div>
   )
 }
